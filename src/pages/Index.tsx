@@ -28,6 +28,9 @@ import heroImage from '@/assets/hero-image.jpg';
 import dataVisualization from '@/assets/data-visualization.jpg';
 import teamCollaboration from '@/assets/team-collaboration.jpg';
 import secureRecords from '@/assets/secure-records.jpg';
+import unLogo from '@/assets/un-logo.png';
+import whoLogo from '@/assets/who-logo.png';
+import saHealthLogo from '@/assets/sa-health-logo.png';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,7 +65,14 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-primary">CONPERCLIDATOOL</div>
+            <div className="flex items-center gap-4">
+              <img 
+                src="/lovable-uploads/4aa2a781-a385-4392-9ef4-b016c32ac76f.png" 
+                alt="BABOPE Wellness and Health Solutions" 
+                className="h-12 w-auto"
+              />
+              <div className="text-2xl font-bold text-primary">CONPERCLIDATOOL</div>
+            </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
@@ -147,6 +157,44 @@ const Index = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners & Affiliations Section */}
+      <section className="py-16 bg-white/50 border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-2xl font-semibold text-foreground">Trusted Partners & Affiliations</h2>
+              <p className="text-muted-foreground">
+                Working together with leading global health organizations
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+              <div className="flex items-center justify-center">
+                <img 
+                  src={unLogo} 
+                  alt="United Nations" 
+                  className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
+              <div className="flex items-center justify-center">
+                <img 
+                  src={whoLogo} 
+                  alt="World Health Organization" 
+                  className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
+              <div className="flex items-center justify-center">
+                <img 
+                  src={saHealthLogo} 
+                  alt="South African Department of Health" 
+                  className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                />
               </div>
             </div>
           </div>
