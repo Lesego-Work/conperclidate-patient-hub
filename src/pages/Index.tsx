@@ -114,49 +114,59 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-background via-secondary to-muted">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary via-primary-dark to-primary-light overflow-hidden">
+        {/* Abstract geometric shapes */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-accent rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-48 h-48 bg-accent-light rounded-lg rotate-45 blur-lg"></div>
+          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-white/20 rounded-full blur-lg"></div>
+          <div className="absolute top-1/3 left-1/4 w-24 h-96 bg-white/10 rounded-full blur-xl rotate-12"></div>
+          <div className="absolute bottom-40 right-10 w-56 h-24 bg-accent/30 rounded-full blur-lg"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-20 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge variant="secondary" className="mb-4">National Digital Health Platform</Badge>
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="text-primary">Empowering Patients.</span><br />
-                  <span className="text-accent">Supporting Providers.</span><br />
-                  <span className="text-foreground">Transforming Healthcare.</span>
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
+                  Power data exchange with 
+                  <span className="text-accent block mt-2">CONPERCLIDATOOL</span>
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  Secure, cloud-based platform enabling patients to store, manage, and share their complete medical history 
-                  with healthcare providers globally while maintaining full control and privacy.
+                <p className="text-xl text-white/90 max-w-lg">
+                  The national network, infrastructure, and platform to access patient data securely 
+                  and transform healthcare across South Africa.
                 </p>
               </div>
+              
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="hero" 
-                  size="xl"
-                  onClick={() => scrollToSection('contact')}
-                  className="group"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <Button size="lg" className="bg-accent hover:bg-accent-light text-primary font-semibold">
+                  Talk to an expert
                 </Button>
-                <Button 
-                  variant="medical" 
-                  size="xl"
-                  onClick={() => scrollToSection('tool')}
-                >
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
                   Request a Demo
                 </Button>
               </div>
             </div>
+            
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <img 
-                  src={heroImage} 
-                  alt="Healthcare Technology Platform" 
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+              {/* Data visualization graphics */}
+              <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-3">
+                    <div className="h-3 bg-accent rounded-full w-3/4"></div>
+                    <div className="h-3 bg-white/40 rounded-full w-1/2"></div>
+                    <div className="h-3 bg-accent-light rounded-full w-2/3"></div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="w-20 h-20 bg-accent/30 rounded-full flex items-center justify-center">
+                      <Shield className="h-8 w-8 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6 flex items-center gap-2">
+                  <div className="w-3 h-3 bg-accent rounded-full"></div>
+                  <div className="text-white/80 text-sm">Secure Patient Data</div>
+                </div>
               </div>
             </div>
           </div>
@@ -164,36 +174,36 @@ const Index = () => {
       </section>
 
       {/* Partners & Affiliations Section */}
-      <section className="py-16 bg-white/50 border-y border-border">
+      <section className="py-16 bg-white border-y border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-2xl font-semibold text-foreground">Trusted Partners & Affiliations</h2>
-              <p className="text-muted-foreground">
-                Working together with leading global health organizations
-              </p>
+              <div className="inline-flex items-center justify-center p-4 bg-primary/10 rounded-full mb-4">
+                <Shield className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-2xl font-semibold text-foreground">TRUSTED BY LEADERS IN HEALTHCARE</h2>
             </div>
             
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-60">
               <div className="flex items-center justify-center">
                 <img 
                   src={unLogo} 
                   alt="United Nations" 
-                  className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                  className="h-12 w-auto object-contain hover:opacity-100 transition-opacity"
                 />
               </div>
               <div className="flex items-center justify-center">
                 <img 
                   src={whoLogo} 
                   alt="World Health Organization" 
-                  className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                  className="h-12 w-auto object-contain hover:opacity-100 transition-opacity"
                 />
               </div>
               <div className="flex items-center justify-center">
                 <img 
                   src={saHealthLogo} 
                   alt="South African Department of Health" 
-                  className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                  className="h-12 w-auto object-contain hover:opacity-100 transition-opacity"
                 />
               </div>
             </div>
