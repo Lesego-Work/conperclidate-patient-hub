@@ -61,52 +61,85 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-        <div className="container mx-auto px-4 py-4">
+      {/* Modern Clean Navigation */}
+      <nav className="fixed top-0 w-full bg-background/98 backdrop-blur-lg border-b border-border/50 z-50 shadow-sm">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
               <img 
                 src="/lovable-uploads/4aa2a781-a385-4392-9ef4-b016c32ac76f.png" 
                 alt="BABOPE Wellness and Health Solutions" 
-                className="h-12 w-auto"
+                className="h-14 w-auto"
               />
-              <div className="text-2xl font-bold text-primary">CONPERCLIDATOOL</div>
+              <div className="text-2xl font-bold text-primary tracking-tight">CONPERCLIDATOOL</div>
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('home')} className="text-foreground hover:text-primary transition-colors">Home</button>
-              <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors">About</button>
-              <button onClick={() => scrollToSection('tool')} className="text-foreground hover:text-primary transition-colors">The Tool</button>
-              <button onClick={() => scrollToSection('features')} className="text-foreground hover:text-primary transition-colors">Features</button>
-              <button onClick={() => scrollToSection('stakeholders')} className="text-foreground hover:text-primary transition-colors">Stakeholders</button>
-              <button onClick={() => scrollToSection('impact')} className="text-foreground hover:text-primary transition-colors">Impact</button>
-              <button onClick={() => scrollToSection('faq')} className="text-foreground hover:text-primary transition-colors">FAQ</button>
-              <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-primary transition-colors">Contact</button>
+            <div className="hidden lg:flex items-center space-x-8">
+              <button onClick={() => scrollToSection('home')} className="text-foreground hover:text-primary transition-all duration-200 font-medium relative group py-2">
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-all duration-200 font-medium relative group py-2">
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('tool')} className="text-foreground hover:text-primary transition-all duration-200 font-medium relative group py-2">
+                The Tool
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('features')} className="text-foreground hover:text-primary transition-all duration-200 font-medium relative group py-2">
+                Features
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('stakeholders')} className="text-foreground hover:text-primary transition-all duration-200 font-medium relative group py-2">
+                Stakeholders
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('impact')} className="text-foreground hover:text-primary transition-all duration-200 font-medium relative group py-2">
+                Impact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('faq')} className="text-foreground hover:text-primary transition-all duration-200 font-medium relative group py-2">
+                FAQ
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </button>
+              <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-primary transition-all duration-200 font-medium relative group py-2">
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="flex items-center gap-3">
+              <Button variant="outline" className="hidden md:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200">
+                Request Demo
+              </Button>
+              <Button className="bg-primary hover:bg-primary-dark text-primary-foreground shadow-md hover:shadow-lg transition-all duration-200">
+                Get Started
+              </Button>
+              
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="lg:hidden p-2 hover:bg-secondary rounded-md transition-colors"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-border">
-              <div className="flex flex-col space-y-3 mt-4">
-                <button onClick={() => scrollToSection('home')} className="text-left py-2 text-foreground hover:text-primary transition-colors">Home</button>
-                <button onClick={() => scrollToSection('about')} className="text-left py-2 text-foreground hover:text-primary transition-colors">About</button>
-                <button onClick={() => scrollToSection('tool')} className="text-left py-2 text-foreground hover:text-primary transition-colors">The Tool</button>
-                <button onClick={() => scrollToSection('features')} className="text-left py-2 text-foreground hover:text-primary transition-colors">Features</button>
-                <button onClick={() => scrollToSection('stakeholders')} className="text-left py-2 text-foreground hover:text-primary transition-colors">Stakeholders</button>
-                <button onClick={() => scrollToSection('impact')} className="text-left py-2 text-foreground hover:text-primary transition-colors">Impact</button>
-                <button onClick={() => scrollToSection('faq')} className="text-left py-2 text-foreground hover:text-primary transition-colors">FAQ</button>
-                <button onClick={() => scrollToSection('contact')} className="text-left py-2 text-foreground hover:text-primary transition-colors">Contact</button>
+            <div className="lg:hidden mt-4 pb-4 border-t border-border/50">
+              <div className="flex flex-col space-y-1 mt-4">
+                <button onClick={() => scrollToSection('home')} className="text-left py-3 px-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-all duration-200">Home</button>
+                <button onClick={() => scrollToSection('about')} className="text-left py-3 px-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-all duration-200">About</button>
+                <button onClick={() => scrollToSection('tool')} className="text-left py-3 px-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-all duration-200">The Tool</button>
+                <button onClick={() => scrollToSection('features')} className="text-left py-3 px-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-all duration-200">Features</button>
+                <button onClick={() => scrollToSection('stakeholders')} className="text-left py-3 px-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-all duration-200">Stakeholders</button>
+                <button onClick={() => scrollToSection('impact')} className="text-left py-3 px-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-all duration-200">Impact</button>
+                <button onClick={() => scrollToSection('faq')} className="text-left py-3 px-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-all duration-200">FAQ</button>
+                <button onClick={() => scrollToSection('contact')} className="text-left py-3 px-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-all duration-200">Contact</button>
               </div>
             </div>
           )}
@@ -114,58 +147,59 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary via-primary-dark to-primary-light overflow-hidden">
-        {/* Abstract geometric shapes */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-accent rounded-full blur-xl"></div>
-          <div className="absolute top-40 right-20 w-48 h-48 bg-accent-light rounded-lg rotate-45 blur-lg"></div>
-          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-white/20 rounded-full blur-lg"></div>
-          <div className="absolute top-1/3 left-1/4 w-24 h-96 bg-white/10 rounded-full blur-xl rotate-12"></div>
-          <div className="absolute bottom-40 right-10 w-56 h-24 bg-accent/30 rounded-full blur-lg"></div>
+      <section id="home" className="relative min-h-screen flex items-center justify-center bg-background pt-20 overflow-hidden">
+        {/* Clean background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-primary rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-48 h-48 bg-accent rounded-lg rotate-45 blur-lg"></div>
+          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-primary/30 rounded-full blur-lg"></div>
         </div>
         
-        <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
             <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
-                  Power data exchange with 
-                  <span className="text-accent block mt-2">CONPERCLIDATOOL</span>
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl font-bold leading-tight text-foreground">
+                  Empowering Patients. 
+                  <span className="text-primary block mt-2">Supporting Providers.</span>
+                  <span className="text-accent block mt-2">Transforming Healthcare.</span>
                 </h1>
-                <p className="text-xl text-white/90 max-w-lg">
-                  The national network, infrastructure, and platform to access patient data securely 
-                  and transform healthcare across South Africa.
+                <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
+                  A secure, cloud-based National Digital Patient Health Record System that puts patients in control 
+                  while enabling seamless global healthcare delivery.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-accent hover:bg-accent-light text-primary font-semibold">
-                  Talk to an expert
+                <Button size="lg" className="bg-primary hover:bg-primary-dark text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
+                  Get Started
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200">
                   Request a Demo
                 </Button>
               </div>
             </div>
             
             <div className="relative">
-              {/* Data visualization graphics */}
-              <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-3">
-                    <div className="h-3 bg-accent rounded-full w-3/4"></div>
-                    <div className="h-3 bg-white/40 rounded-full w-1/2"></div>
-                    <div className="h-3 bg-accent-light rounded-full w-2/3"></div>
+              {/* Clean data visualization */}
+              <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border shadow-lg">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="h-3 bg-primary rounded-full w-3/4"></div>
+                    <div className="h-3 bg-primary/40 rounded-full w-1/2"></div>
+                    <div className="h-3 bg-accent rounded-full w-2/3"></div>
+                    <div className="h-3 bg-accent/60 rounded-full w-4/5"></div>
                   </div>
                   <div className="flex items-center justify-center">
-                    <div className="w-20 h-20 bg-accent/30 rounded-full flex items-center justify-center">
-                      <Shield className="h-8 w-8 text-white" />
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Shield className="h-8 w-8 text-primary" />
                     </div>
                   </div>
                 </div>
                 <div className="mt-6 flex items-center gap-2">
-                  <div className="w-3 h-3 bg-accent rounded-full"></div>
-                  <div className="text-white/80 text-sm">Secure Patient Data</div>
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  <div className="text-muted-foreground text-sm font-medium">Secure Patient Data</div>
                 </div>
               </div>
             </div>
